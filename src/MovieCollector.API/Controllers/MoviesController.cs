@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieCollector.API.Services.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace MovieCollector.API.Controllers
@@ -17,25 +21,69 @@ namespace MovieCollector.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _service.GetMovies());
+            try
+            {
+                return Ok(await _service.GetMovies());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(string movieName, int movieRating)
+        public async Task<IActionResult> Post([Required]string movieName, [Required]int movieRating)
         {
-            return Ok(await _service.AddMovie(movieName, movieRating));
+            try
+            {
+                return Ok(await _service.AddMovie(movieName, movieRating));
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (DuplicateNameException ex)
+            {
+                return StatusCode(409, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> Put(string id, int movieRating)
+        [HttpPatch("{id}/{movieRating}")]
+        public async Task<IActionResult> Patch(string id, int movieRating)
         {
-            return Ok(await _service.UpdateMovie(id, movieRating));
+            try
+            {
+                return Ok(await _service.UpdateMovie(id, movieRating));
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            return Ok(await _service.DeleteMovie(id));
+            try
+            {
+                return Ok(await _service.DeleteMovie(id));
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
     }
 }
