@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollector.API", "src\MovieCollector.API\MovieCollector.API.csproj", "{62E4A47B-E38F-4D69-A724-CC23EE1A204E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCollector.StarWarsAPI", "src\MovieCollector.StarWarsAPI\MovieCollector.StarWarsAPI.csproj", "{6B2AE63B-2E3C-44AF-8F66-66535FC6683D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCollector.StarWarsAPIWrapper", "src\MovieCollector.StarWarsAPI\MovieCollector.StarWarsAPIWrapper.csproj", "{6B2AE63B-2E3C-44AF-8F66-66535FC6683D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
