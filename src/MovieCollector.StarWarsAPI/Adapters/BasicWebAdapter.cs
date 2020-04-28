@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieCollector.StarWarsAPIWrapper.Adapters.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -9,10 +10,15 @@ using System.Threading.Tasks;
 
 namespace MovieCollector.StarWarsAPI.Adapters
 {
-    public class BasicWebAdapter
+    public class BasicWebAdapter : IWebAdapter
     {
         protected HttpClient client = new HttpClient();
         protected JsonSerializerOptions InputSerializerOptions = new JsonSerializerOptions();
+
+        public BasicWebAdapter()
+        {
+
+        }
 
         public BasicWebAdapter(string baseUrl)
         {

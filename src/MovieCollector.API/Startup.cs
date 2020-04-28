@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MovieCollector.StarWarsAPI;
@@ -14,6 +9,7 @@ using MovieCollector.StarWarsAPI.Services.Interfaces;
 using Microsoft.OpenApi.Models;
 using MovieCollector.API.Services.Interfaces;
 using MovieCollector.API.Services;
+using MovieCollector.API.Data;
 
 namespace MovieCollector.API
 {
@@ -26,6 +22,7 @@ namespace MovieCollector.API
             services.AddTransient<ISwapiCore, SwapiCore>();
             services.AddTransient<IStarWarsService, StarWarsService>();
             services.AddTransient<IMovieCollectorService, MovieCollectorService>();
+            services.AddTransient<MongoDbContext>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
