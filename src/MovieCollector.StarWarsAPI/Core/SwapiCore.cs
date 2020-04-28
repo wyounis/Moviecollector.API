@@ -16,14 +16,22 @@ namespace MovieCollector.StarWarsAPI.Core
             adapter = new SwapiAdapter();
         }
 
-        public Task<IEnumerable<Film>> GetFilms()
+        public async Task<FilmsResponse> GetFilms(string id)
         {
-            throw new NotImplementedException();
+            var films = await adapter.GetAsync<FilmsResponse>("api/films/" + id);
+            return films;
         }
 
-        public Task<Character> GetCharacter(string id)
+        public async Task<Character> GetCharacter(string id)
         {
-            throw new NotImplementedException();
+            var character = await adapter.GetAsync<Character>("api/people/" + id);
+            return character;
+        }
+
+        public async Task<FilmsResponse> FindFilm(string filmName)
+        {
+            var films = await adapter.GetAsync<FilmsResponse>("api/films/?search=" + filmName);
+            return films;
         }
     }
 }

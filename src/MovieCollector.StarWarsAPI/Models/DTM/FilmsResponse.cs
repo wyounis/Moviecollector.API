@@ -1,28 +1,41 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace MovieCollector.StarWarsAPI.Models.DTM
 {
     public class FilmsResponse
     {
-        public int? Count { get; set; }
+        [JsonProperty]
+        public int? count { get; set; }
 
-        public string Next { get; set; }
+        [JsonProperty]
+        public string next { get; set; }
 
-        public string Previous { get; set; }
+        [JsonProperty]
+        public string previous { get; set; }
 
-        public Film[] Results { get; set; }
+        [JsonProperty]
+        public List<Film> results { get; set; }
     }
 
     public class Film
     {
-        public string Title { get; set; }
-        public string Producer { get; set; }
-        public string Director { get; set; }
-        public string Episode_Id { get; set; }
-        public DateTime? Release_Date { get; set; }
-        public string[] Characters { get; set; }
-        public Character[] CharactersObj { get; set; }
+        [JsonProperty]
+        public string title { get; set; }
+        [JsonProperty]
+        public string producer { get; set; }
+        [JsonProperty]
+        public string director { get; set; }
+        [JsonProperty]
+        public int? episode_id { get; set; }
+        [JsonProperty]
+        public DateTime? release_date { get; set; }
+        [JsonProperty]
+        public List<string> characters { get; set; }
+        [JsonProperty]
+        public List<Character> characters_obj { get; set; } = new List<Character>();
     }
 }

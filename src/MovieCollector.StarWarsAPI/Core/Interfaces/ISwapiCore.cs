@@ -8,8 +8,10 @@ namespace MovieCollector.StarWarsAPI.Core.Interfaces
 {
     public interface ISwapiCore
     {
-        public Task<IEnumerable<Film>> GetFilms();
+        public Task<FilmsResponse> GetFilms(string id);
 
         public Task<Character> GetCharacter(string id);
+
+        public Task<FilmsResponse> FindFilm(string filmName);
     }
 }

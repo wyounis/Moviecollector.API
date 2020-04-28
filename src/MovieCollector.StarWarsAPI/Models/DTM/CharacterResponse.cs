@@ -6,8 +6,8 @@ namespace MovieCollector.StarWarsAPI.Models.DTM
 {
     public class Character
     {
-        public string Name { get; set; }
-        public string Gender { get; set; }
-        public string Birth_Year { get; set; }
+        public string name { get; set; }
+        public string gender { get; set; }
+        public string birth_year { get; set; }
     }
 }
