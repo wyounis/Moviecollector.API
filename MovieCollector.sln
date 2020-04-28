@@ -7,6 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCollector.API", "src\M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCollector.StarWarsAPIWrapper", "src\MovieCollector.StarWarsAPI\MovieCollector.StarWarsAPIWrapper.csproj", "{6B2AE63B-2E3C-44AF-8F66-66535FC6683D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting.MovieCollector.StarWarsAPIWrapper", "testing\UnitTesting.MovieCollector.StarWarsAPIWrapper\UnitTesting.MovieCollector.StarWarsAPIWrapper.csproj", "{D787C6AF-145A-4442-B1D0-CBD1EA12B34B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{B3BA6A22-7651-409E-A5F6-6B3137C479FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{B41C7719-3A6E-4B0B-8C51-CD1B46143A62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTesting", "UnitTesting", "{CF8B4733-8ED9-471E-892C-F38119150387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting.MovieCollector.API", "testing\UnitTesting.MovieCollector.API\UnitTesting.MovieCollector.API.csproj", "{4AA2F21A-EEBF-4875-BCD9-6BA6AFD1220A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +31,23 @@ Global
 		{6B2AE63B-2E3C-44AF-8F66-66535FC6683D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B2AE63B-2E3C-44AF-8F66-66535FC6683D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B2AE63B-2E3C-44AF-8F66-66535FC6683D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D787C6AF-145A-4442-B1D0-CBD1EA12B34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D787C6AF-145A-4442-B1D0-CBD1EA12B34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D787C6AF-145A-4442-B1D0-CBD1EA12B34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D787C6AF-145A-4442-B1D0-CBD1EA12B34B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AA2F21A-EEBF-4875-BCD9-6BA6AFD1220A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA2F21A-EEBF-4875-BCD9-6BA6AFD1220A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA2F21A-EEBF-4875-BCD9-6BA6AFD1220A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA2F21A-EEBF-4875-BCD9-6BA6AFD1220A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62E4A47B-E38F-4D69-A724-CC23EE1A204E} = {B3BA6A22-7651-409E-A5F6-6B3137C479FB}
+		{6B2AE63B-2E3C-44AF-8F66-66535FC6683D} = {B41C7719-3A6E-4B0B-8C51-CD1B46143A62}
+		{D787C6AF-145A-4442-B1D0-CBD1EA12B34B} = {CF8B4733-8ED9-471E-892C-F38119150387}
+		{4AA2F21A-EEBF-4875-BCD9-6BA6AFD1220A} = {CF8B4733-8ED9-471E-892C-F38119150387}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {931315AE-4C8B-42FD-9FF4-AF4255073CCA}
